@@ -1,0 +1,76 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="Rechner 0.2.0-0063 " Height="430" Width="260" Background="Black" WindowStyle="SingleBorderWindow">
+	<Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+		<TabControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF1A1A1A" BorderThickness="0" Margin="0,0,0.333,-0.333" TabStripPlacement="Bottom" SelectionChanged="TabControl_SelectionChanged">
+			<TabItem Header="Standart" Visibility="Collapsed">
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="2"/>
+						<ColumnDefinition Width="*"/>
+						<ColumnDefinition Width="2"/>
+						<ColumnDefinition Width="*"/>
+						<ColumnDefinition Width="2"/>
+						<ColumnDefinition Width="*"/>
+						<ColumnDefinition Width="2"/>
+						<ColumnDefinition Width="*"/>
+						<ColumnDefinition Width="2"/>
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="0.5*"/>
+						<RowDefinition Height="0.4*"/>
+						<RowDefinition Height="*"/>
+						<RowDefinition Height="2"/>
+						<RowDefinition Height="*"/>
+						<RowDefinition Height="2"/>
+						<RowDefinition Height="*"/>
+						<RowDefinition Height="2"/>
+						<RowDefinition Height="*"/>
+						<RowDefinition Height="2"/>
+						<RowDefinition Height="*"/>
+						<RowDefinition Height="2"/>
+						<RowDefinition Height="*"/>
+						<RowDefinition Height="2"/>
+					</Grid.RowDefinitions>
+					<TextBox x:Name="smallDisplay" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="7" Text="5*4+2" TextAlignment="Right" BorderThickness="0" Background="Transparent" Foreground="White"/>
+					<TextBox x:Name="txtDisplay" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="7" Text="0" TextAlignment="Right" FontSize="36" BorderThickness="0" Background="Transparent" Foreground="White"/>
+					<Button x:Name="NumpadPlus" Grid.Row="10" Grid.Column="7" Content="+" FontSize="25" Click="NumpadPlus_Click" BorderThickness="0" Background="Black" Foreground="White"/>
+					<Button x:Name="NumpadMinus" Grid.Row="8" Grid.Column="7" Content="-" FontSize="25" Click="NumpadMinus_Click" BorderThickness="0" Background="Black" Foreground="White"/>
+					<Button x:Name="NumpadMultiply" Grid.Row="6" Grid.Column="7" Content="*" FontSize="25" Click="NumpadMultiply_Click" BorderThickness="0" Background="Black" Foreground="White"/>
+					<Button x:Name="NumpadDivide" Grid.Row="4" Grid.Column="7" Content="/" FontSize="25" Click="NumpadDivide_Click" BorderThickness="0" Background="Black" Foreground="White"/>
+					<Button x:Name="NumpadEquals" Grid.Row="12" Grid.Column="7" Content="=" FontSize="25" Click="NumpadEquals_Click" BorderThickness="0" Background="Black" Foreground="White"/>
+					<Button x:Name="NumpadComma" Grid.Row="12" Grid.Column="5" Content="." FontSize="25" Click="NumpadComma_Click" BorderThickness="0" Background="Black" Foreground="White"/>
+					<Button x:Name="NumpadClear" Grid.Row="4" Grid.Column="1" Content="C" FontSize="25" Click="NumpadClear_Click" BorderThickness="0" Background="Black" Foreground="White"/>
+					<Button x:Name="NumpadBackspace" Grid.Row="4" Grid.Column="5" Content="&lt;-" FontSize="25" Click="NumpadBackspace_Click" BorderThickness="0" Background="Black" Foreground="White"/>
+					<Button x:Name="Numpad1" Grid.Row="10" Grid.Column="1" Content="1" FontSize="22" Click="Numpad1_Click" BorderThickness="0" Background="Black" Foreground="White"/>
+					<Button x:Name="Numpad2" Grid.Row="10" Grid.Column="3" Content="2" FontSize="25" Click="Numpad2_Click" BorderThickness="0" Background="Black" Foreground="White"/>
+					<Button x:Name="Numpad3" Grid.Row="10" Grid.Column="5" Content="3" FontSize="25" Click="Numpad3_Click" BorderThickness="0" Background="Black" Foreground="White"/>
+					<Button x:Name="Numpad4" Grid.Row="8" Grid.Column="1" Content="4" FontSize="25" Click="Numpad4_Click" BorderThickness="0" Background="Black" Foreground="White"/>
+					<Button x:Name="Numpad5" Grid.Row="8" Grid.Column="3" Content="5" FontSize="25" Click="Numpad5_Click" BorderThickness="0" Background="Black" Foreground="White"/>
+					<Button x:Name="Numpad6" Grid.Row="8" Grid.Column="5" Content="6" FontSize="25" Click="Numpad6_Click" BorderThickness="0" Background="Black" Foreground="White"/>
+					<Button x:Name="Numpad7" Grid.Row="6" Grid.Column="1" Content="7" FontSize="25" Click="Numpad7_Click" BorderThickness="0" Background="Black" Foreground="White"/>
+					<Button x:Name="Numpad8" Grid.Row="6" Grid.Column="3" Content="8" FontSize="25" Click="Numpad8_Click" BorderThickness="0" Background="Black" Foreground="White"/>
+					<Button x:Name="Numpad9" Grid.Row="6" Grid.Column="5" Content="9" FontSize="25" Click="Numpad9_Click" BorderThickness="0" Background="Black" Foreground="White"/>
+					<Button x:Name="Numpad0" Grid.Row="12" Grid.Column="3" Content="0" FontSize="25" Click="Numpad0_Click" BorderThickness="0" Background="Black" Foreground="White"/>
+					<Button x:Name="NumpadNC1" Grid.Row="4" Grid.Column="3" Content="" FontSize="25" Click="NumpadNC1_Click" BorderThickness="0" Background="Black" Foreground="White"/>
+					<Button x:Name="NumpadNC2" Grid.Row="12" Grid.Column="1" Content="" FontSize="25" Click="NumpadNC2_Click" BorderThickness="0" Background="Black" Foreground="White"/>
+				</Grid>
+			</TabItem>
+			<TabItem Header="TabItem" Visibility="Collapsed">
+				<Grid Background="#FFE5E5E5"/>
+			</TabItem>
+		</TabControl>
+		<Grid x:Name="gridSidemenu" Visibility="Collapsed" HorizontalAlignment="Left" Width="150">
+			<Rectangle Name="rectSidemenu" Width="150" HorizontalAlignment="Left" VerticalAlignment="Stretch" Fill="Black" Opacity="0.9"/>
+			<StackPanel HorizontalAlignment="Stretch" Margin="0,32,0,-0.333">
+				<Button x:Name="smStandartClick" Content="Standart" HorizontalAlignment="Stretch" VerticalAlignment="Top" FontSize="16" Height="30" BorderThickness="0" Background="Transparent" Foreground="White"/>
+			</StackPanel>
+		</Grid>
+		<Button x:Name="SidemenuButton" Width="32" Height="32" FontSize="16" VerticalAlignment="Top" HorizontalAlignment="Left" Background="Transparent" Click="SidemenuClick" BorderThickness="0" Content="=" Foreground="White"/>
+	</Grid>
+</Window>
