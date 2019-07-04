@@ -41,9 +41,9 @@ namespace WpfApp2
 
 	public partial class MainWindow : Window
 	{
-		int ioperator = 0;
-		double dtotal1 = 0;
-		double dtotal2 = 0;
+		string sOperator;
+		double dNum1 = 0;
+		double dNum2 = 0;
 
 
 		public MainWindow()
@@ -79,54 +79,12 @@ namespace WpfApp2
 			MessageBox.Show("Du hast ein Easteregg gefunden!", "Easteregg", MessageBoxButton.OK, MessageBoxImage.Asterisk);
 		}
 
-			private void Numpad1_Click(object sender, RoutedEventArgs e)
+		private void Numpad_input(string a)
 		{
-			txtDisplay.Text += "1";
-		}
-
-		private void Numpad2_Click(object sender, RoutedEventArgs e)
-		{
-			txtDisplay.Text += "2";
-		}
-
-		private void Numpad3_Click(object sender, RoutedEventArgs e)
-		{
-			txtDisplay.Text += "3";
-		}
-
-		private void Numpad4_Click(object sender, RoutedEventArgs e)
-		{
-			txtDisplay.Text += "4";
-		}
-
-		private void Numpad5_Click(object sender, RoutedEventArgs e)
-		{
-			txtDisplay.Text += "5";
-		}
-
-		private void Numpad6_Click(object sender, RoutedEventArgs e)
-		{
-			txtDisplay.Text += "6";
-		}
-
-		private void Numpad7_Click(object sender, RoutedEventArgs e)
-		{
-			txtDisplay.Text += "7";
-		}
-
-		private void Numpad8_Click(object sender, RoutedEventArgs e)
-		{
-			txtDisplay.Text += "8";
-		}
-
-		private void Numpad9_Click(object sender, RoutedEventArgs e)
-		{
-			txtDisplay.Text += "9";
-		}
-
-		private void Numpad0_Click(object sender, RoutedEventArgs e)
-		{
-			txtDisplay.Text += "0";
+			if (txtDisplay.Text == "0")
+				txtDisplay.Text = a;
+			else
+				txtDisplay.Text += a;
 		}
 
 		private void NumpadComma_Click(object sender, RoutedEventArgs e)
@@ -139,58 +97,67 @@ namespace WpfApp2
 
 		private void NumpadPlus_Click(object sender, RoutedEventArgs e)
 		{
-			dtotal1 += double.Parse(txtDisplay.Text);
+			dNum1 += double.Parse(txtDisplay.Text);
 			txtDisplay.Clear();
-			ioperator = 1;
+			sOperator = "+";
 		}
 
 		private void NumpadMinus_Click(object sender, RoutedEventArgs e)
 		{
-			dtotal1 += double.Parse(txtDisplay.Text);
+			dNum1 += double.Parse(txtDisplay.Text);
 			txtDisplay.Clear();
-			ioperator = 2;
+			sOperator = "-";
 		}
 
 		private void NumpadMultiply_Click(object sender, RoutedEventArgs e)
 		{
-			dtotal1 += double.Parse(txtDisplay.Text);
+			dNum1 += double.Parse(txtDisplay.Text);
 			txtDisplay.Clear();
-			ioperator = 3;
+			sOperator = "*";
 		}
 
 		private void NumpadDivide_Click(object sender, RoutedEventArgs e)
 		{
-			dtotal1 += double.Parse(txtDisplay.Text);
+			dNum1 += double.Parse(txtDisplay.Text);
 			txtDisplay.Clear();
-			ioperator = 4;
+			sOperator = "/";
 		}
 
 		private void NumpadEquals_Click(object sender, RoutedEventArgs e)
 		{
-			switch (ioperator)
+			dNum2 = double.Parse(txtDisplay.Text);
+			switch (sOperator)
 			{
-				case 1:
-					dtotal2 = dtotal1 + double.Parse(txtDisplay.Text);
+				case "+":
+					txtDisplay.Text = (dNum1 + dNum2).ToString();
 					break;
-				case 2:
-					dtotal2 = dtotal1 - double.Parse(txtDisplay.Text);
+				case "-":
+					txtDisplay.Text = (dNum1 - dNum2).ToString();
 					break;
-				case 3:
-					dtotal2 = dtotal1 * double.Parse(txtDisplay.Text);
+				case "*":
+					txtDisplay.Text = (dNum1 * dNum2).ToString();
 					break;
-				case 4:
-					dtotal2 = dtotal1 / double.Parse(txtDisplay.Text);
+				case "/":
+					txtDisplay.Text = (dNum1 / dNum2).ToString();
 					break;
+				/*
+				case "^":
+					txtDisplay.Text = (int.Parse(dNum1.ToString()) Xor int.Parse(dNum2.ToString())).ToString();
+					break;
+				case "%":
+					txtDisplay.Text = (dNum1 Mod dNum2).ToString();
+					break;
+				*/
 				default:
 					/* 
-					If ioperator does not include the value of one
+					If sOperator does not include the value of one
 					of the Cases the error code 1 is displayed.
 					 */
 					MessageBox.Show("Fehlercode: 1", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
 					break;
 			}
-			txtDisplay.Text = dtotal2.ToString();
-			dtotal1 = 0;
+			txtDisplay.Text = dNum2.ToString();
+			dNum1 = 0;
 		}
 
 		private void MenuExitClick(object sender, RoutedEventArgs e)
