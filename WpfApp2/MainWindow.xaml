@@ -47,16 +47,16 @@
 					<Button x:Name="NumpadComma" Grid.Row="12" Grid.Column="5" Content="." FontSize="25" Click="NumpadComma_Click" BorderThickness="0" Background="Black" Foreground="White"/>
 					<Button x:Name="NumpadClear" Grid.Row="4" Grid.Column="1" Content="C" FontSize="25" Click="NumpadClear_Click" BorderThickness="0" Background="Black" Foreground="White"/>
 					<Button x:Name="NumpadBackspace" Grid.Row="4" Grid.Column="5" Content="&lt;-" FontSize="25" Click="NumpadBackspace_Click" BorderThickness="0" Background="Black" Foreground="White"/>
-					<Button x:Name="Numpad1" Grid.Row="10" Grid.Column="1" Content="1" FontSize="22" Click="Numpad1_Click" BorderThickness="0" Background="Black" Foreground="White"/>
-					<Button x:Name="Numpad2" Grid.Row="10" Grid.Column="3" Content="2" FontSize="25" Click="Numpad2_Click" BorderThickness="0" Background="Black" Foreground="White"/>
-					<Button x:Name="Numpad3" Grid.Row="10" Grid.Column="5" Content="3" FontSize="25" Click="Numpad3_Click" BorderThickness="0" Background="Black" Foreground="White"/>
-					<Button x:Name="Numpad4" Grid.Row="8" Grid.Column="1" Content="4" FontSize="25" Click="Numpad4_Click" BorderThickness="0" Background="Black" Foreground="White"/>
-					<Button x:Name="Numpad5" Grid.Row="8" Grid.Column="3" Content="5" FontSize="25" Click="Numpad5_Click" BorderThickness="0" Background="Black" Foreground="White"/>
-					<Button x:Name="Numpad6" Grid.Row="8" Grid.Column="5" Content="6" FontSize="25" Click="Numpad6_Click" BorderThickness="0" Background="Black" Foreground="White"/>
-					<Button x:Name="Numpad7" Grid.Row="6" Grid.Column="1" Content="7" FontSize="25" Click="Numpad7_Click" BorderThickness="0" Background="Black" Foreground="White"/>
-					<Button x:Name="Numpad8" Grid.Row="6" Grid.Column="3" Content="8" FontSize="25" Click="Numpad8_Click" BorderThickness="0" Background="Black" Foreground="White"/>
-					<Button x:Name="Numpad9" Grid.Row="6" Grid.Column="5" Content="9" FontSize="25" Click="Numpad9_Click" BorderThickness="0" Background="Black" Foreground="White"/>
-					<Button x:Name="Numpad0" Grid.Row="12" Grid.Column="3" Content="0" FontSize="25" Click="Numpad0_Click" BorderThickness="0" Background="Black" Foreground="White"/>
+					<Button x:Name="Numpad1" Grid.Row="10" Grid.Column="1" Content="1" FontSize="22" Click="Numpad_input(1)" BorderThickness="0" Background="Black" Foreground="White"/>
+					<Button x:Name="Numpad2" Grid.Row="10" Grid.Column="3" Content="2" FontSize="25" Click="Numpad_input(2)" BorderThickness="0" Background="Black" Foreground="White"/>
+					<Button x:Name="Numpad3" Grid.Row="10" Grid.Column="5" Content="3" FontSize="25" Click="Numpad_input(3)" BorderThickness="0" Background="Black" Foreground="White"/>
+					<Button x:Name="Numpad4" Grid.Row="8" Grid.Column="1" Content="4" FontSize="25" Click="Numpad_input(4)" BorderThickness="0" Background="Black" Foreground="White"/>
+					<Button x:Name="Numpad5" Grid.Row="8" Grid.Column="3" Content="5" FontSize="25" Click="Numpad_input(5)" BorderThickness="0" Background="Black" Foreground="White"/>
+					<Button x:Name="Numpad6" Grid.Row="8" Grid.Column="5" Content="6" FontSize="25" Click="Numpad_input(6)" BorderThickness="0" Background="Black" Foreground="White"/>
+					<Button x:Name="Numpad7" Grid.Row="6" Grid.Column="1" Content="7" FontSize="25" Click="Numpad_input(7)" BorderThickness="0" Background="Black" Foreground="White"/>
+					<Button x:Name="Numpad8" Grid.Row="6" Grid.Column="3" Content="8" FontSize="25" Click="Numpad_input(8)" BorderThickness="0" Background="Black" Foreground="White"/>
+					<Button x:Name="Numpad9" Grid.Row="6" Grid.Column="5" Content="9" FontSize="25" Click="Numpad_input(9)" BorderThickness="0" Background="Black" Foreground="White"/>
+					<Button x:Name="Numpad0" Grid.Row="12" Grid.Column="3" Content="0" FontSize="25" Click="Numpad_input(0)" BorderThickness="0" Background="Black" Foreground="White"/>
 					<Button x:Name="NumpadNC1" Grid.Row="4" Grid.Column="3" Content="" FontSize="25" Click="NumpadNC1_Click" BorderThickness="0" Background="Black" Foreground="White"/>
 					<Button x:Name="NumpadNC2" Grid.Row="12" Grid.Column="1" Content="" FontSize="25" Click="NumpadNC2_Click" BorderThickness="0" Background="Black" Foreground="White"/>
 				</Grid>
