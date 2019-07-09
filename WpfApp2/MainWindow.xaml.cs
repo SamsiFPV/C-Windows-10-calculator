@@ -14,9 +14,10 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 /*
-Project: Calculator
+Project: calculator
 Author: Samsi
 Date: 20.8.18
+version: 0.2.1-0075
 Description: The Application is supposed to work just like the integrated Windows Calculator.
 It has a standart mode, a Datatype converter, and other mathematical features.
 Note: Some things aren't implemented yet. This is still WIP.
@@ -31,6 +32,7 @@ Known Bugs: Only 1 Operation at once is possible. Also the full operation displa
 Changelog:
 07.10.18 - v0.1.0-0023 : First functioning addition. Also working clear and comma buttons.
 09.10.18 - v0.2.0-0046 : All basic functions work (+,-,*,/). Also added Backspace.
+09.07.19 - v0.2.1-0075 : Cleanup of the backend code, added app icon.
 */
 
 namespace WpfApp2
@@ -50,6 +52,7 @@ namespace WpfApp2
 		{
 			InitializeComponent();
 		}
+
 		private void NumpadClear_Click(object sender, RoutedEventArgs e)
 		{
 			txtDisplay.Clear();
@@ -68,7 +71,57 @@ namespace WpfApp2
 			}
 			txtDisplay.Text = s;
 		}
-		
+
+		private void Numpad1_Click(object sender, RoutedEventArgs e)
+		{
+			Numpad_input("1");
+		}
+
+		private void Numpad2_Click(object sender, RoutedEventArgs e)
+		{
+			Numpad_input("2");
+		}
+
+		private void Numpad3_Click(object sender, RoutedEventArgs e)
+		{
+			Numpad_input("3");
+		}
+
+		private void Numpad4_Click(object sender, RoutedEventArgs e)
+		{
+			Numpad_input("4");
+		}
+
+		private void Numpad5_Click(object sender, RoutedEventArgs e)
+		{
+			Numpad_input("5");
+		}
+
+		private void Numpad6_Click(object sender, RoutedEventArgs e)
+		{
+			Numpad_input("6");
+		}
+
+		private void Numpad7_Click(object sender, RoutedEventArgs e)
+		{
+			Numpad_input("7");
+		}
+
+		private void Numpad8_Click(object sender, RoutedEventArgs e)
+		{
+			Numpad_input("8");
+		}
+
+		private void Numpad9_Click(object sender, RoutedEventArgs e)
+		{
+			Numpad_input("9");
+		}
+
+		private void Numpad0_Click(object sender, RoutedEventArgs e)
+		{
+			Numpad_input("0");
+		}
+
 		private void NumpadNC1_Click(object sender, RoutedEventArgs e)
 		{
 			
@@ -77,14 +130,6 @@ namespace WpfApp2
 		private void NumpadNC2_Click(object sender, RoutedEventArgs e)
 		{
 			MessageBox.Show("Du hast ein Easteregg gefunden!", "Easteregg", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-		}
-
-		private void Numpad_input(string a)
-		{
-			if (txtDisplay.Text == "0")
-				txtDisplay.Text = a;
-			else
-				txtDisplay.Text += a;
 		}
 
 		private void NumpadComma_Click(object sender, RoutedEventArgs e)
@@ -156,18 +201,13 @@ namespace WpfApp2
 					MessageBox.Show("Fehlercode: 1", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
 					break;
 			}
-			txtDisplay.Text = dNum2.ToString();
 			dNum1 = 0;
 		}
 
-		private void MenuExitClick(object sender, RoutedEventArgs e)
-		{
-			this.Close();
-		}
 		// SidemenuClick ist verantwortlich für das Ein- und Ausklappen des seitlichen Menus
 		private void SidemenuClick(object sender, RoutedEventArgs e)
 		{
-			//Das Seitenmenu und all seine Buttons wird ein und ausgeblendet
+			//Das Seitenmenu und alle seine Buttons werden ein und ausgeblendet
 			if (gridSidemenu.Visibility == System.Windows.Visibility.Collapsed)
 			{
 				gridSidemenu.Visibility = System.Windows.Visibility.Visible;
@@ -180,9 +220,12 @@ namespace WpfApp2
 			}
 		}
 
-		private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		private void Numpad_input(string a)
 		{
-
+			if (txtDisplay.Text == "0")
+				txtDisplay.Text = a;
+			else
+				txtDisplay.Text += a;
 		}
 	}
 }
